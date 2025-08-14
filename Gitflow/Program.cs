@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gitflow
@@ -11,56 +12,31 @@ namespace Gitflow
         static void Main(string[] args)
         {
             Console.WriteLine("Equipo de trabajo: ARG0");
-            MostrarMenu();
+            PrintGitflowArt();
         }
-        static void MostrarMenu()
+        /// <summary>
+        static void PrintGitflowArt()
         {
-            Console.WriteLine("=== Simulador GitFlow ===");
-            Console.WriteLine("1. Inicializar GitFlow");
-            Console.WriteLine("2. Crear rama 'feature'");
-            Console.WriteLine("3. Crear rama 'release'");
-            Console.WriteLine("4. Crear rama 'hotfix'");
-            Console.WriteLine("5. Salir");
-            Console.Write("Selecciona una opción: ");
-
-            string opcion = Console.ReadLine();
-            EjecutarOpcion(opcion);
-        }
-
-        static void EjecutarOpcion(string opcion)
-        {
-            switch (opcion)
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            string[] gitflowArt = new string[]
             {
-                case "1":
-                    Console.WriteLine("GitFlow inicializado con ramas: master, develop");
-                    break;
-                case "2":
-                    Console.Write("Nombre de la feature: ");
-                    string feature = Console.ReadLine();
-                    Console.WriteLine($"Rama 'feature/{feature}' creada desde 'develop'");
-                    break;
-                case "3":
-                    Console.Write("Versión de release: ");
-                    string release = Console.ReadLine();
-                    Console.WriteLine($"Rama 'release/{release}' creada desde 'develop'(Para RGC ACTIVA es basada de master)");
-                    break;
-                case "4":
-                    Console.Write("Nombre del hotfix: ");
-                    string hotfix = Console.ReadLine();
-                    Console.WriteLine($"Rama 'hotfix/{hotfix}' creada desde 'master'");
-                    break;
-                case "5":
-                    Console.WriteLine("Saliendo del simulador...");
-                    return;
-                default:
-                    Console.WriteLine("Opción no válida.");
-                    break;
+                @"   ____ _ _   _____ _                   ",
+                @"  / ___(_) |_|  ___| | ___   __      __ ",
+                @" | |  _| | __| |_  | |/ _ \ |  \_/\_/  |",
+                @" | |_| | | |_|  _| | | (_) || |  /\  | |",
+                @"  \____|_| \__|_|  | |\___/  \__/  \__/ "
+            };
+            foreach (string line in gitflowArt)
+            {
+                foreach (char c in line)
+                {
+                    Console.Write(c);
+                    Thread.Sleep(10);
+                }
+                Console.WriteLine();
             }
 
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-            Console.ReadKey();
-            Console.Clear();
-            MostrarMenu();
+            Console.ResetColor();
         }
     }
 }
