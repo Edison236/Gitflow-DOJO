@@ -13,8 +13,6 @@ namespace Gitflow
         {
             Console.WriteLine("Equipo de trabajo: ARG0");
             PrintGitflowArt();
-            Console.WriteLine();
-            MostrarMenu();
         }
         /// <summary>
         static void PrintGitflowArt()
@@ -39,53 +37,6 @@ namespace Gitflow
             }
 
             Console.ResetColor();
-        }
-        static void MostrarMenu()
-        {
-            Console.WriteLine("=== Simulador GitFlow ===");
-            Console.WriteLine("1. Inicializar GitFlow");
-            Console.WriteLine("2. Crear rama 'feature'");
-            Console.WriteLine("3. Crear rama 'release'");
-            Console.WriteLine("4. Crear rama 'hotfix'");
-            Console.WriteLine("5. Salir");
-            Console.Write("Selecciona una opción: ");
-
-            string opcion = Console.ReadLine();
-            EjecutarOpcion(opcion);
-        }
-        static void EjecutarOpcion(string opcion)
-        {
-            switch (opcion)
-            {
-                case "1":
-                    Console.WriteLine("GitFlow inicializado con ramas: master, develop");
-                    break;
-                case "2":
-                    Console.Write("Nombre de la feature: ");
-                    string feature = Console.ReadLine();
-                    Console.WriteLine($"Rama 'feature-{feature}' creada desde 'develop'");
-                    break;
-                case "3":
-                    Console.Write("Versión de release: ");
-                    string release = Console.ReadLine();
-                    Console.WriteLine($"Rama 'release-{release}' creada desde 'develop'(Para RGC ACTIVA es basada de master)");
-                    break;
-                case "4":
-                    Console.Write("Nombre del hotfix: ");
-                    string hotfix = Console.ReadLine();
-                    Console.WriteLine($"Rama 'hotfix-{hotfix}' creada desde 'master'");
-                    break;
-                case "5":
-                    Console.WriteLine("Saliendo del simulador...");
-                    return;
-                default:
-                    Console.WriteLine("Opción no válida.");
-                    break;
-            }
-
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-            Console.ReadKey();
-            MostrarMenu();
         }
     }
 }
