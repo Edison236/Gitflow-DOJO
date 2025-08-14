@@ -63,17 +63,17 @@ namespace Gitflow
                 case "2":
                     Console.Write("Nombre de la feature: ");
                     string feature = Console.ReadLine();
-                    Console.WriteLine($"Rama 'feature/{feature}' creada desde 'develop'");
+                    Console.WriteLine($"Rama 'feature-{feature}' creada desde 'develop'");
                     break;
                 case "3":
                     Console.Write("Versión de release: ");
                     string release = Console.ReadLine();
-                    Console.WriteLine($"Rama 'release/{release}' creada desde 'develop'(Para RGC ACTIVA es basada de master)");
+                    Console.WriteLine($"Rama 'release-{release}' creada desde 'develop'(Para RGC ACTIVA es basada de master)");
                     break;
                 case "4":
                     Console.Write("Nombre del hotfix: ");
                     string hotfix = Console.ReadLine();
-                    Console.WriteLine($"Rama 'hotfix/{hotfix}' creada desde 'master'");
+                    Console.WriteLine($"Rama 'hotfix-{hotfix}' creada desde 'master'");
                     break;
                 case "5":
                     Console.WriteLine("Saliendo del simulador...");
