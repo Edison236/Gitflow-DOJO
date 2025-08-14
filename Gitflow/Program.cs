@@ -13,6 +13,7 @@ namespace Gitflow
         {
             Console.WriteLine("Equipo de trabajo: ARG0");
             PrintGitflowArt();
+            MostrarMenu();
         }
         /// <summary>
         static void PrintGitflowArt()
@@ -37,6 +38,18 @@ namespace Gitflow
             }
 
             Console.ResetColor();
+        }
+        static void MostrarMenu()
+        {
+            Console.WriteLine("=== Simulador GitFlow ===");
+            Console.WriteLine("1. Inicializar GitFlow");
+            Console.WriteLine("2. Crear rama 'feature'");
+            Console.WriteLine("3. Crear rama 'release'");
+            Console.WriteLine("4. Crear rama 'hotfix'");
+            Console.WriteLine("5. Salir");
+            Console.Write("Selecciona una opción: ");
+
+            string opcion = Console.ReadLine();
         }
     }
 }
