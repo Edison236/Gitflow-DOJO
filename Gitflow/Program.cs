@@ -37,6 +37,44 @@ namespace Gitflow
             }
 
             Console.ResetColor();
+            Thread.Sleep(1000);
+            Console.WriteLine();
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Clear();
+                Thread.Sleep(200);
+                RedrawGitflowArt(gitflowArt);
+                Thread.Sleep(200);
+            }
+
+            PrintMessage();
+        }
+
+        static void RedrawGitflowArt(string[] art)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            foreach (string line in art)
+            {
+                Console.WriteLine(line);
+            }
+            Console.ResetColor();
+        }
+        static void PrintMessage()
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            string message = "       GRACIAS POR SU PARTICIPACIÓN            ";
+
+            
+                foreach (char c in message)
+                {
+                    Console.Write(c);
+                    Thread.Sleep(2);
+                }
+
+            Console.WriteLine();            
+            Console.ResetColor();
         }
     }
 }
