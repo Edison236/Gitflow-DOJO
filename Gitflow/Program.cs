@@ -64,7 +64,7 @@ namespace Gitflow
         {
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            string message = "       GRACIAS POR SU PARTICIPACIÓN            ";
+            string message = "       GRACIAS POR SU PARTICIPACIÓN.........            ";
 
             
                 foreach (char c in message)
